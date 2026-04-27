@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Almarai", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  @apply bg-white;
+}
+
+body {
+  @apply bg-white text-slate-900 overflow-x-hidden;
+  direction: rtl;
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-slate-200 shadow-sm;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-indigo-600 via-purple-600 to-blue-600;
+}
+
+.gradient-bg {
+  @apply bg-linear-to-r from-indigo-600 via-purple-600 to-blue-600;
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%,-40%) scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease .75s 1 forwards;
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
