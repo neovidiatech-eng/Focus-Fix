@@ -12,7 +12,7 @@ import { SubtleWaves, SubtleGrid } from "./ui/hero-background";
 
 export const Hero = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAnchorElement>, href: string, callback?: () => void) => void }) => {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-white">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-35 overflow-hidden bg-white">
       <SubtleGrid color="#00000008" className="opacity-100" />
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#4f46e520" />
       <SubtleWaves />
