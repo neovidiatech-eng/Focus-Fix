@@ -24,7 +24,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMenuOpen ? "glass py-3 shadow-sm" : "bg-transparent py-6"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMenuOpen ? "glass py-3 shadow-sm" : "bg-transparent py-4 md:py-6"}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <img src="/logo1.jpeg" alt="Focus Repair Logo" className="w-30 h-12 object-cover  rounded-xl" />
@@ -57,11 +57,19 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
             variant="ghost"
             size="sm"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-slate-900 border-none hover:bg-black/5"
+            className="md:hidden relative w-10 h-10 flex items-center justify-center text-slate-900 border-none hover:bg-black/5"
           >
-            <div className={`w-6 h-0.5 bg-current transition-all ${isMenuOpen ? "rotate-45 translate-y-2" : "mb-1.5"}`}></div>
-            <div className={`w-6 h-0.5 bg-current transition-all ${isMenuOpen ? "opacity-0" : "mb-1.5"}`}></div>
-            <div className={`w-6 h-0.5 bg-current transition-all ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}></div>
+            <div className="relative w-6 h-5">
+              <span 
+                className={`absolute left-0 block w-6 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? "top-2 rotate-45" : "top-0"}`}
+              ></span>
+              <span 
+                className={`absolute left-0 block w-6 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? "opacity-0" : "top-2"}`}
+              ></span>
+              <span 
+                className={`absolute left-0 block w-6 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? "top-2 -rotate-45" : "top-4"}`}
+              ></span>
+            </div>
           </Button>
         </div>
       </div>
