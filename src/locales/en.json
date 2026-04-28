@@ -62,10 +62,10 @@
   "whyUs": {
     "badge": "Why Us?",
     "title": "Why Choose Focus Store?",
-    "item1": { "title": "Repair at Your Location", "desc": "No need to leave your phone and go; we fix it in front of you at your home or office." },
-    "item2": { "title": "Original Spare Parts", "desc": "We use the highest quality spare parts to ensure your phone's original performance." },
-    "item3": { "title": "Real Warranty", "desc": "Every maintenance operation provided by Focus Store comes with a real and effective warranty." },
-    "item4": { "title": "Super Fast", "desc": "We complete most maintenance operations in less than 30 minutes." },
+    "item1": { "title": "30 Minute Repair", "desc": "Fastest repair service in Egypt, we finish your device in less than half an hour." },
+    "item2": { "title": "Home Repair", "desc": "We come to your door and fix the phone in front of you with complete safety." },
+    "item3": { "title": "Original Spare Parts", "desc": "We use original spare parts with a real warranty of up to 3 months." },
+    "item4": { "title": "Modern Tools", "desc": "We use the latest machines and tools to ensure the highest precision in maintenance." },
     "stats": {
       "screen": "Screens Repaired",
       "motherboard": "Motherboards Fixed",

@@ -2,13 +2,12 @@ import { motion } from "framer-motion";
 import { SubtleGrid } from "./ui/hero-background";
 import { Button } from "./ui/neon-button";
 import {MessageSquare,Phone,Mail,MapPin} from "lucide-react"
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import { message } from "antd";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 export const Contact = () => {
   const { t } = useTranslation();
@@ -26,21 +25,30 @@ export const Contact = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const formRef = useRef<HTMLFormElement>(null);
+  const formRef =useRef<HTMLFormElement>(null)
 
 
-  const onSubmit = async () => {
-    if (!formRef.current) return;
-    
+  const onSubmit = async (data: z.infer<typeof contactSchema>) => {
     try {
-      await emailjs.sendForm(
-        'service_o2f2xur', 
-        'template_1voervo', 
-        formRef.current, 
-        'D4j1vTItr2mS_oF-G'
-      );
-      message.success(t("contact.messages.success"));
-      reset();
+      const formData = new FormData();
+      formData.append('name', data.user_name);
+      formData.append('phone', data.user_phone);
+      formData.append('email', data.user_email);
+      formData.append('device', data.device_type);
+      formData.append('issue', data.issue_type);
+      formData.append('message', data.message_details || '');
+
+      const response = await fetch('send_mail.php', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        message.success(t("contact.messages.success"));
+        reset();
+      } else {
+        throw new Error('Failed to send');
+      }
     } catch (error) {
       message.error(t("contact.messages.error"));
     }

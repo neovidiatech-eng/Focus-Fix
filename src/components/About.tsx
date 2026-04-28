@@ -29,8 +29,7 @@ export const About = () => {
             <div className="absolute -top-10 -right-10 w-60 h-60 bg-indigo-500 rounded-full -z-10 blur-[100px] opacity-10"></div>
             <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-purple-500 rounded-full -z-10 blur-[100px] opacity-10"></div>
 
-            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 md:translate-x-0 md:inset-s-0 bg-[#1c1d4f] backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-2xl border border-white/20 z-20 whitespace-nowrap">
-              <div className="text-4xl md:text-5xl font-black text-white mb-1 leading-none text-center md:text-start">{t("about.experience")}</div>
+<div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 md:translate-x-[-25%] md:left-0 bg-[#1c1d4f] backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-2xl border border-white/20 z-20 whitespace-nowrap">              <div className="text-4xl md:text-5xl font-black text-white mb-1 leading-none text-center md:text-start">{t("about.experience")}</div>
               <div className="font-bold text-white text-base md:text-lg text-center md:text-start">{t("about.years")}</div>
               <div className="text-[10px] md:text-sm text-indigo-100 text-center md:text-start">{t("about.specialty")}</div>
             </div>

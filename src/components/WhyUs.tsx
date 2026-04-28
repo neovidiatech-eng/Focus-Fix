@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import { SubtleGrid } from "./ui/hero-background";
 import {
   ShieldCheck,
-  Zap,
-  MapPin,
-  Gem
+  Clock,
+  Home,
+  Wrench
 } from "lucide-react";
 
 export const WhyUs = () => {
@@ -15,12 +15,12 @@ export const WhyUs = () => {
     {
       title: t("whyUs.item1.title"),
       desc: t("whyUs.item1.desc"),
-      icon: <MapPin className="text-indigo-600" size={32} />
+      icon: <Clock className="text-indigo-600" size={32} />
     },
     {
       title: t("whyUs.item2.title"),
       desc: t("whyUs.item2.desc"),
-      icon: <Gem className="text-indigo-600" size={32} />
+      icon: <Home className="text-indigo-600" size={32} />
     },
     {
       title: t("whyUs.item3.title"),
@@ -30,7 +30,7 @@ export const WhyUs = () => {
     {
       title: t("whyUs.item4.title"),
       desc: t("whyUs.item4.desc"),
-      icon: <Zap className="text-indigo-600" size={32} />
+      icon: <Wrench className="text-indigo-600" size={32} />
     }
   ];
 

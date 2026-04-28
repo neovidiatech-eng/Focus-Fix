@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFix | شكراً لك</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind 4 CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    
+    <style type="text/tailwindcss">
+        @theme {
+            --font-sans: var(--font-app);
+        }
+
+        :root {
+            --font-app: "Almarai", "Montserrat", "Inter", sans-serif;
+        }
+
+        html[lang="en"] {
+            --font-app: "Montserrat", "Inter", sans-serif;
+        }
+
+        body {
+            @apply bg-slate-50 text-slate-900 overflow-x-hidden min-h-screen flex items-center justify-center;
+            font-family: var(--font-app);
+        }
+
+        .gradient-bg {
+            @apply bg-linear-to-r from-indigo-600 via-purple-600 to-blue-600;
+        }
+
+        .subtle-grid {
+            background-image: linear-gradient(to right, #00000008 1px, transparent 1px), 
+                              linear-gradient(to bottom, #00000008 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="absolute inset-0 subtle-grid opacity-100 -z-10"></div>
+    
+    <div class="max-w-xl w-full mx-auto px-6 text-center">
+        <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-2xl shadow-indigo-200">
+            <i data-lucide="check" class="w-12 h-12"></i>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight" data-i18n="thanks.title">شكراً لك!</h1>
+        <p class="text-xl text-slate-600 mb-10 leading-relaxed font-medium" data-i18n="thanks.message">
+            تم استلام طلبك بنجاح، سنتواصل معك فى أقرب وقت ممكن.
+        </p>
+        
+        <a href="index.html" class="inline-flex items-center gap-2 bg-[#1c1d4f] text-white px-10 py-4 rounded-2xl shadow-lg hover:scale-105 transition-all font-bold" data-i18n="thanks.backHome">
+            <i data-lucide="arrow-right" class="rtl:rotate-0 rotate-180 w-5 h-5"></i>
+            <span data-i18n="thanks.backHome">العودة للرئيسية</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./translations.js"></script>
+    <script>
+        // Simple i18n for thanks page
+        const currentLang = localStorage.getItem('lang') || 'ar';
+        document.documentElement.lang = currentLang;
+        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+        
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const translation = key.split('.').reduce((p, c) => p && p[c], translations[currentLang]);
+            if (translation) el.textContent = translation;
+        });
+        
+        lucide.createIcons();
+    </script>
+</body>
+</html>
