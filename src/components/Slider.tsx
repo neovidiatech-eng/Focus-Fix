@@ -21,7 +21,7 @@ export const Slider = () => {
   return (
     <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        
+
         <div className="text-center mb-12 space-y-3">
           <h3 className="text-3xl md:text-4x text-[#021026] font-bold">
             {t("slider.title")}
@@ -61,11 +61,11 @@ export const Slider = () => {
                     <img
                       src={img}
                       alt={`Repair Work ${i + 1}`}
-                      className="w-full h-[300px] md:h-[390px] object-contain" 
+                      className="w-full h-[300px] md:h-[390px] object-contain"
                     />
-                    <div className="absolute bottom-4 ltr:right-4 rtl:left-4 bg-[#021026] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                    {/* <div className="absolute bottom-4 ltr:right-10 bg-[#021026] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
                       {t("slider.result")}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </SwiperSlide>
@@ -75,7 +75,7 @@ export const Slider = () => {
           <button className="swiper-button-prev-custom absolute ltr:-left-4 rtl:-right-4 md:ltr:-left-3 md:rtl:-right-3 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#021026] text-[#021026] rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
             <ChevronLeft className="rtl:rotate-180" size={24} color="white" />
           </button>
-          
+
           <button className="swiper-button-next-custom absolute ltr:-right-4 rtl:-left-4 md:ltr:-right-3 md:rtl:-left-3 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#021026] text-[#021026] rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
             <ChevronRight className="rtl:rotate-180" size={24} color="white" />
           </button>
