@@ -8,7 +8,7 @@ export const FloatingWhatsApp = () => {
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-8 right-8 z-100"
+      className="fixed bottom-8 inset-e-8 z-100"
     >
       <a
         href="https://wa.me/201009911934"

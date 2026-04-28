@@ -10,7 +10,7 @@ export const Spotlight = ({
 }) => {
   return (
     <svg
-      className={`animate-spotlight pointer-events-none absolute z-[1] h-[169%] w-[138%] lg:w-[84%] opacity-0 ${className}`}
+      className={`animate-spotlight pointer-events-none absolute z-1 h-[169%] w-[138%] lg:w-[84%] opacity-0 ${className}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 3787 2842"
       fill="none"
@@ -33,7 +33,7 @@ export const Spotlight = ({
           y="0.838989"
           width="3785.16"
           height="2840.26"
-          filterUnits="userSpaceOnLines"
+          filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>

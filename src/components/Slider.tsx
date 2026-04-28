@@ -4,30 +4,37 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import i18n from '../i18n';
+
 export const Slider = () => {
+  const { t } = useTranslation();
   const images = [
     "/image1.jpeg",
     "/image2.jpeg",
     "/image3.jpeg",
     "/image4.jpeg",
     "/image5.jpeg",
+    "/image6.jpeg",
   ];
 
   return (
-    <section className="py-16 px-6"> 
+    <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
         
         <div className="text-center mb-12 space-y-3">
           <h3 className="text-3xl md:text-4x text-[#021026] font-bold">
-            جودة نثق بها، نتائج تلمسها
+            {t("slider.title")}
           </h3>
           <p className="text-slate-400 max-w-2xl mx-auto font-medium">
-            خدماتنا تتميز بالدقة والإحترافية، ونهتم بأدق التفاصيل لضمان رضا عملائنا وتحويل أجهزتكم لحالتها الأصلية.
+            {t("slider.description")}
           </p>
         </div>
 
         <div className="relative group">
           <Swiper
+            dir={i18n.language === "ar" ? "rtl" : "ltr"}
+            key={i18n.language}
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={20}
             slidesPerView={1}
@@ -54,10 +61,10 @@ export const Slider = () => {
                     <img
                       src={img}
                       alt={`Repair Work ${i + 1}`}
-                      className="w-full h-[300px] md:h-[400px] object-cover" 
+                      className="w-full h-[300px] md:h-[390px] object-contain" 
                     />
-                    <div className="absolute bottom-4 right-4 bg-[#021026] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
-                      النتيجة النهائية
+                    <div className="absolute bottom-4 ltr:right-4 rtl:left-4 bg-[#021026] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                      {t("slider.result")}
                     </div>
                   </div>
                 </div>
@@ -65,16 +72,14 @@ export const Slider = () => {
             ))}
           </Swiper>
 
-          {/* أزرار التنقل - يمين ويسار */}
-          <button className="swiper-button-prev-custom absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#021026] text-[#021026] rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
-            <ChevronLeft size={24} color="white" />
+          <button className="swiper-button-prev-custom absolute ltr:-left-4 rtl:-right-4 md:ltr:-left-3 md:rtl:-right-3 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#021026] text-[#021026] rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
+            <ChevronLeft className="rtl:rotate-180" size={24} color="white" />
           </button>
           
-          <button className="swiper-button-next-custom absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#021026] text-[#021026] rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
-            <ChevronRight size={24} color="white" />
+          <button className="swiper-button-next-custom absolute ltr:-right-4 rtl:-left-4 md:ltr:-right-3 md:rtl:-left-3 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#021026] text-[#021026] rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
+            <ChevronRight className="rtl:rotate-180" size={24} color="white" />
           </button>
 
-          {/* النقاط المخصصة */}
           <div className="custom-pagination flex justify-center gap-2 mt-4"></div>
         </div>
       </div>

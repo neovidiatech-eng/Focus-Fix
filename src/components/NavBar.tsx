@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Phone } from "lucide-react";
+import { Phone, Globe } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "./ui/neon-button";
+import { useTranslation } from "react-i18next";
 
 export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAnchorElement>, href: string, callback?: () => void) => void }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "ar" ? "en" : "ar";
+    i18n.changeLanguage(newLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +23,11 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
   }, []);
 
   const navLinks = [
-    { name: "الرئيسية", href: "#home" },
-    { name: "خدماتنا", href: "#services" },
-    { name: "من نحن", href: "#about" },
-    { name: "لماذا تختارنا", href: "#why-us" },
-    { name: "تواصل معنا", href: "#contact" },
+    { name: t("nav.home"), href: "#home" },
+    { name: t("nav.services"), href: "#services" },
+    { name: t("nav.about"), href: "#about" },
+    { name: t("nav.whyUs"), href: "#why-us" },
+    { name: t("nav.contact"), href: "#contact" },
   ];
 
   return (
@@ -43,6 +50,15 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
         </div>
 
         <div className="flex items-center gap-4 relative z-50">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={toggleLanguage}
+            className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 font-bold"
+          >
+            <Globe size={18} />
+            <span>{i18n.language === "ar" ? "English" : "عربي"}</span>
+          </Button>
           <a href="tel:01009911934" className="hidden sm:block">
             <Button
               variant="solid"
@@ -73,7 +89,6 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
           </Button>
         </div>
       </div>
-
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -99,7 +114,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
                   className="w-full bg-[#1c1d4f] text-white flex items-center justify-center gap-2"
                 >
                   <Phone size={16} />
-                  <span>اتصل الآن</span>
+                  <span>{t("nav.callNow")}</span>
                 </Button>
               </a>
             </div>

@@ -1,42 +1,36 @@
 import { Smartphone, Battery, Camera, Cpu, ShieldCheck ,CheckCircle2} from "lucide-react";
 import { motion } from "framer-motion";
 import { SubtleGrid } from "./ui/hero-background";
+import { useTranslation } from "react-i18next";
 
 export const CommonProblems = () => {
+  const { t } = useTranslation();
+
   const categories = [
     {
-      title: "مشاكل شاشة الـ IPhone",
-      icon: <Smartphone className="text-indigo-600" size={24} />,
-      items: ["كسر أو شرخ فى الشاشة", "ألوان الشاشة بايظة", "الباغة أتكسرت", "التاتش مش شغال"]
+      title: t("problems.screen.title"),
+      icon: <Smartphone  size={24} />,
+      items: Array.isArray(t("problems.screen.items", { returnObjects: true })) ? t("problems.screen.items", { returnObjects: true }) as string[] : []
     },
     {
-      title: "مشاكل البطاريات",
-      icon: <Battery className="text-emerald-600" size={24} />,
-      items: ["البطارية بتسخن", "البطارية منفوخة", "البطارية بتخلص بسرعة"]
+      title: t("problems.battery.title"),
+      icon: <Battery  size={24} />,
+      items: Array.isArray(t("problems.battery.items", { returnObjects: true })) ? t("problems.battery.items", { returnObjects: true }) as string[] : []
     },
     {
-      title: "مشاكل الظهر",
-      icon: <ShieldCheck className="text-purple-600" size={24} />,
-      items: ["الظهر أتكسر", "الظهر اتشرخ", "الـ Wireless Charge مش شغال"]
+      title: t("problems.back.title"),
+      icon: <ShieldCheck  size={24} />,
+      items: Array.isArray(t("problems.back.items", { returnObjects: true })) ? t("problems.back.items", { returnObjects: true }) as string[] : []
     },
     {
-      title: "مشاكل الكاميرات",
-      icon: <Camera className="text-rose-600" size={24} />,
-      items: ["الكاميرا فاصلة", "الكاميرا مزغللة"]
+      title: t("problems.camera.title"),
+      icon: <Camera  size={24} />,
+      items: Array.isArray(t("problems.camera.items", { returnObjects: true })) ? t("problems.camera.items", { returnObjects: true }) as string[] : []
     },
     {
-      title: "مشاكل الـ Motherboard",
-      icon: <Cpu className="text-amber-600" size={24} />,
-      items: [
-        "الموبايل وقع فى الماية",
-        "الموبايل بيعمل Restart",
-        "الموبايل بيفصل شاشة كل شوية",
-        "الموبايل بيسخن فى الشاحن",
-        "الموبايل فصل صوت",
-        "الشبكة ضعيفة أو فاصة",
-        "الموبايل مش بيلقط Wifi",
-        "الـ Face ID مش شغال"
-      ],
+      title: t("problems.motherboard.title"),
+      icon: <Cpu  size={24} />,
+      items: Array.isArray(t("problems.motherboard.items", { returnObjects: true })) ? t("problems.motherboard.items", { returnObjects: true }) as string[] : [] ,
       className: "lg:col-span-2"
     }
   ];
@@ -46,8 +40,8 @@ export const CommonProblems = () => {
       <SubtleGrid color="#00000008" className="opacity-100 mask-[linear-gradient(to_bottom,white,transparent)]" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-indigo-600 font-bold mb-4">الأعطال الشائعة</h2>
-          <h3 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight whitespace-pre-wrap">أهم مشاكل الـ IPhone اللى بنصلحها</h3>
+          <h2 className="text-indigo-600 font-bold mb-4">{t("problems.badge")}</h2>
+          <h3 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight whitespace-pre-wrap">{t("problems.title")}</h3>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -58,10 +52,10 @@ export const CommonProblems = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`p-8 rounded-[2.5rem] bg-white border border-slate-200 shadow-xl shadow-slate-200/20 hover:border-indigo-500/30 transition-all group ${cat.className || ""}`}
+              className={`p-8 rounded-[2.5rem] bg-slate-100 border border-slate-200 shadow-xl shadow-slate-200/20 hover:border-indigo-500/30 transition-all group ${cat.className || ""}`}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-indigo-50 text-[#1c1d4f] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                   {cat.icon}
                 </div>
                 <h4 className="text-xl font-bold text-slate-900">{cat.title}</h4>

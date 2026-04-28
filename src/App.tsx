@@ -44,7 +44,7 @@ export default function App() {
   };
 
   return (
-    <div dir="rtl" className="font-sans antialiased bg-white text-slate-900 no-scrollbar relative">
+    <div className="font-sans antialiased bg-slate-50 text-slate-900 no-scrollbar relative">
       <Navbar onScrollTo={handleScrollTo} />
       <main className="relative z-10">
         <Hero onScrollTo={handleScrollTo} />

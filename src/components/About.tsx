@@ -2,9 +2,13 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/neon-button";
 import { SubtleGrid } from "./ui/hero-background";
 
+import { useTranslation } from "react-i18next";
+
 export const About = () => {
+  const { t } = useTranslation();
+
   return (
-    <section id="about" className="py-24 overflow-hidden bg-white relative">
+    <section id="about" className="py-24 overflow-hidden bg-slate-50 relative">
       <SubtleGrid color="#00000008" className="opacity-100" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -25,10 +29,10 @@ export const About = () => {
             <div className="absolute -top-10 -right-10 w-60 h-60 bg-indigo-500 rounded-full -z-10 blur-[100px] opacity-10"></div>
             <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-purple-500 rounded-full -z-10 blur-[100px] opacity-10"></div>
 
-            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 md:translate-x-[-25%] md:left-0 bg-[#1c1d4f] backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-2xl border border-white/20 z-20 whitespace-nowrap">
-              <div className="text-4xl md:text-5xl font-black text-white mb-1 leading-none text-center md:text-right">+12</div>
-              <div className="font-bold text-white text-base md:text-lg text-center md:text-right">سنة خبرة</div>
-              <div className="text-[10px] md:text-sm text-indigo-100 text-center md:text-right">في صيانة الآيفون</div>
+            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 md:translate-x-0 md:inset-s-0 bg-[#1c1d4f] backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-2xl border border-white/20 z-20 whitespace-nowrap">
+              <div className="text-4xl md:text-5xl font-black text-white mb-1 leading-none text-center md:text-start">{t("about.experience")}</div>
+              <div className="font-bold text-white text-base md:text-lg text-center md:text-start">{t("about.years")}</div>
+              <div className="text-[10px] md:text-sm text-indigo-100 text-center md:text-start">{t("about.specialty")}</div>
             </div>
           </motion.div>
 
@@ -37,15 +41,15 @@ export const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-amber-600 font-bold mb-4">نبذة عنا</h2>
+            <h2 className="text-amber-600 font-bold mb-4">{t("about.badge")}</h2>
             <h3 className="text-3xl md:text-4xl font-black mb-8 leading-tight text-slate-900 tracking-tight">
-              مركز FOCUS.. <br className="hidden sm:block" />
+               {t("about.title")} <br className="hidden sm:block" />
             </h3>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed font-medium">
-              لصيانة الآيفون عندنا أكتر من 12 سنة خبرة في تصليح الآيفون. FOCUS إحنا مركز خلال السنين اللي فاتت، صلحنا آلاف الأجهزة وفضلنا أصحابها، وده خلا سمعتنا تكبر مع مرور الوقت.
+              {t("about.description1")}
             </p>
             <p className="text-lg text-slate-600 mb-10 leading-relaxed font-medium">
-              شغفنا بالصيانة بيخلينا نستمتع دايمًا باكتشاف المشاكل والأعطال الجديدة، حتى لو كانت معقدة، وده بيخلينا دايمًا متفوقين في تصليح الآيفون. عملائنا دايمًا بيثقوا فينا عشان الجودة والاحترافية اللي بنقدمها.
+              {t("about.description2")}
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -57,7 +61,7 @@ export const About = () => {
                 size="lg"
                 className="bg-[#1c1d4f] text-white rounded-2xl shadow-lg shadow-indigo-200"
               >
-                تواصل معنا الآن
+                {t("about.contactBtn")}
               </Button>
             </motion.div>
           </motion.div>
