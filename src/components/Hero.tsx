@@ -44,7 +44,7 @@ export const Hero = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAnch
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               {t("hero.description")}
             </p>
-            <div className=" gap-4 mb-12 grid grid-cols-2 sm:grid-cols-2">
+            <div className="gap-2 mb-12 grid grid-cols-2 sm:grid-cols-1">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -53,7 +53,7 @@ export const Hero = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAnch
                   <Button
                     variant="solid"
                     size="lg"
-                    className="bg-green-600 hover:bg-green-700 text-white flex items-center gap-3 rounded-2xl shadow-lg shadow-green-200"
+                    className="bg-green-600 hover:bg-green-700 text-white flex items-center gap-1 rounded-2xl shadow-lg shadow-green-200"
                   >
                     <MessageSquare size={24} />
                     <span>{t("hero.whatsapp")}</span>
