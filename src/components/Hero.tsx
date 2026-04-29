@@ -44,7 +44,7 @@ export const Hero = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAnch
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               {t("hero.description")}
             </p>
-            <div className="gap-2 mb-12 grid grid-cols-2 sm:grid-cols-1">
+            <div className="gap-2 mb-12 grid grid-cols-1 sm:grid-cols-2">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
