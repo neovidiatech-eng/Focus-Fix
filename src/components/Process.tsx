@@ -41,7 +41,7 @@ export const Process = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-indigo-600 font-bold mb-4">{t("process.badge")}</h2>
-          <h3 className="text-4xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight">{t("process.title")}</h3>
+          <h3 className="text-2xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight">{t("process.title")}</h3>
         </div>
 
         <div className="relative">

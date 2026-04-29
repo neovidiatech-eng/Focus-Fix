@@ -45,7 +45,7 @@ export const WhyUs = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-indigo-600 font-bold mb-4">{t("whyUs.badge")}</h2>
-          <h3 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-slate-900">{t("whyUs.title")}</h3>
+          <h3 className="text-2xl md:text-5xl font-black mb-6 tracking-tight text-slate-900">{t("whyUs.title")}</h3>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">

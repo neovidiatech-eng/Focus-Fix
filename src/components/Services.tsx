@@ -60,7 +60,7 @@ export const Services = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-indigo-600 font-bold mb-4">{t("services.badge")}</h2>
-          <h3 className="text-4xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight">{t("services.title")}</h3>
+          <h3 className="text-2xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight">{t("services.title")}</h3>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg font-medium">{t("services.description")}</p>
         </div>
 

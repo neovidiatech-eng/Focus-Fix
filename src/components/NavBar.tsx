@@ -36,7 +36,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
         <div className="flex items-center gap-2">
           <img src="/logo1.jpeg" alt="Focus Repair Logo" className="w-30 h-12 object-cover  rounded-xl" />
         </div>
-        <div className="hidden md:flex items-center gap-8 font-medium text-slate-600">
+        <div className="hidden lg:flex items-center gap-8 font-medium text-slate-600">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -73,7 +73,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
             variant="ghost"
             size="sm"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden relative w-10 h-10 flex items-center justify-center text-slate-900 border-none hover:bg-black/5"
+            className="lg:hidden relative w-10 h-10 flex items-center justify-center text-slate-900 border-none hover:bg-black/5"
           >
             <div className="relative w-6 h-5">
               <span 
@@ -95,7 +95,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-slate-200 overflow-hidden"
+            className="lg:hidden glass border-t border-slate-200 overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
@@ -103,12 +103,12 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
                   key={link.href}
                   href={link.href}
                   onClick={(e) => onScrollTo(e, link.href, () => setIsMenuOpen(false))}
-                  className="text-lg font-bold text-slate-900 hover:text-indigo-600 transition-colors"
+                  className="block w-full py-2 text-lg font-bold text-slate-900 hover:text-indigo-600 transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              <a href="tel:01009911934" className="sm:hidden">
+              <a href="tel:01009911934" className="block sm:hidden">
                 <Button
                   variant="solid"
                   className="w-full bg-[#1c1d4f] text-white flex items-center justify-center gap-2"

@@ -16,7 +16,7 @@ export const Hero = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAnch
   const { t } = useTranslation();
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-35 overflow-hidden bg-slate-50">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center sm:pt-50 pt-40 overflow-hidden bg-slate-50">
       <SubtleGrid color="#00000008" className="opacity-100" />
       <Spotlight className="-top-40 inset-s-0 md:inset-s-60 md:-top-20" fill="#4f46e520" />
       <SubtleWaves />
@@ -37,14 +37,14 @@ export const Hero = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAnch
               <Star size={16} fill="currentColor" />
               <span>{t("hero.badge")}</span>
             </motion.div>
-            <h1 className="text-4xl md:text-6xl font-black leading-tight text-slate-900 mb-6 tracking-tighter">
+            <h1 className="text-2xl md:text-6xl font-black leading-tight text-slate-900 mb-6 tracking-tighter">
               {t("hero.title1")} <br />
-              <span className="gradient-text text-3xl md:text-5xl">{t("hero.title2")}</span>
+              <span className="gradient-text text-2xl md:text-5xl">{t("hero.title2")}</span>
             </h1>
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               {t("hero.description")}
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className=" gap-4 mb-12 grid grid-cols-2 sm:grid-cols-2">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

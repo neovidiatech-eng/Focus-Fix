@@ -14,33 +14,25 @@ import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 export default function App() {
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string, callback?: () => void) => {
     e.preventDefault();
+    
+    // Close mobile menu if open
     if (callback) callback();
 
-    // For '#home' or empty href, scroll to top
-    if (href === "#home" || href === "#") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      // Update URL hash without jumping
-      window.history.pushState(null, "", href);
-      return;
-    }
-
     const targetId = href.replace("#", "");
-    const elem = document.getElementById(targetId);
-    if (elem) {
-      const offset = 80; // Offset for fixed header
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elemRect = elem.getBoundingClientRect().top;
-      const elemPosition = elemRect - bodyRect;
-      const offsetPosition = elemPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-
-      // Update URL hash without jumping
+    
+    // Use a small timeout to ensure the state change (closing menu) 
+    // doesn't interfere with the scroll animation
+    setTimeout(() => {
+      if (targetId === "home" || targetId === "" || href === "#") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
       window.history.pushState(null, "", href);
-    }
+    }, 100);
   };
 
   return (
@@ -53,7 +45,7 @@ export default function App() {
         <About />
         <WhyUs />
         <CommonProblems />
-        <Slider/>
+        <Slider />
         <Contact />
       </main>
       <Footer onScrollTo={handleScrollTo} />

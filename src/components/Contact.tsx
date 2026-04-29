@@ -62,7 +62,7 @@ export const Contact = () => {
           <div className="grid lg:grid-cols-2">
             <div className="p-12 lg:p-20">
               <h2 className="text-indigo-600 font-bold mb-4">{t("contact.badge")}</h2>
-              <h3 className="text-4xl font-black mb-10 text-slate-900 tracking-tight">{t("contact.title")}</h3>
+              <h3 className="text-2xl font-black mb-10 text-slate-900 tracking-tight">{t("contact.title")}</h3>
 
             <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
