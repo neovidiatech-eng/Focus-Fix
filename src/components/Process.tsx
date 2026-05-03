@@ -40,7 +40,7 @@ export const Process = () => {
       <SubtleGrid color="#00000008" className="opacity-100 mask-[linear-gradient(to_bottom,white,transparent)]" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-indigo-600 font-bold mb-4">{t("process.badge")}</h2>
+          <h2 className="text-brand-100 font-bold mb-4">{t("process.badge")}</h2>
           <h3 className="text-2xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight">{t("process.title")}</h3>
         </div>
 
@@ -58,7 +58,7 @@ export const Process = () => {
                 transition={{ delay: index * 0.1 }}
                 className="relative z-10 flex flex-col items-center text-center"
               >
-                <div className="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white mb-8 shadow-2xl shadow-indigo-500/20 text-2xl font-black">
+                <div className="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white mb-8 shadow-2xl shadow-brand-100/20 text-2xl font-black">
                   {index + 1}
                 </div>
                 <h4 className="text-2xl font-bold my-4 text-slate-900">{step.title}</h4>

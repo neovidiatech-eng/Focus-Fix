@@ -14,12 +14,12 @@ import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 export default function App() {
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string, callback?: () => void) => {
     e.preventDefault();
-    
+
     // Close mobile menu if open
     if (callback) callback();
 
     const targetId = href.replace("#", "");
-    
+
     // Use a small timeout to ensure the state change (closing menu) 
     // doesn't interfere with the scroll animation
     setTimeout(() => {

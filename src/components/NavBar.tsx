@@ -42,7 +42,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
               key={link.href}
               href={link.href}
               onClick={(e) => onScrollTo(e, link.href)}
-              className="hover:text-indigo-600 transition-colors"
+              className="hover:text-brand-100 transition-colors"
             >
               {link.name}
             </a>
@@ -54,7 +54,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
             variant="ghost"
             size="sm"
             onClick={toggleLanguage}
-            className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 font-bold"
+            className="flex items-center gap-2 text-slate-600 hover:text-brand-100 font-bold"
           >
             <Globe size={18} />
             <span>{i18n.language === "ar" ? "English" : "عربي"}</span>
@@ -63,7 +63,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
             <Button
               variant="solid"
               size="sm"
-              className="bg-[#1c1d4f] text-white hover:bg-[#1c1d4f] flex items-center gap-2"
+              className="bg-brand-100 text-white hover:bg-brand-400 flex items-center gap-2"
             >
               <Phone size={16} />
               <span>01009911934</span>
@@ -103,7 +103,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
                   key={link.href}
                   href={link.href}
                   onClick={(e) => onScrollTo(e, link.href, () => setIsMenuOpen(false))}
-                  className="block w-full py-2 text-lg font-bold text-slate-900 hover:text-indigo-600 transition-colors"
+                  className="block w-full py-2 text-lg font-bold text-slate-900 hover:text-brand-100 transition-colors"
                 >
                   {link.name}
                 </a>
@@ -111,7 +111,7 @@ export const Navbar = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
               <a href="tel:01009911934" className="block sm:hidden">
                 <Button
                   variant="solid"
-                  className="w-full bg-[#1c1d4f] text-white flex items-center justify-center gap-2"
+                  className="w-full bg-brand-100 text-white flex items-center justify-center gap-2"
                 >
                   <Phone size={16} />
                   <span>{t("nav.callNow")}</span>

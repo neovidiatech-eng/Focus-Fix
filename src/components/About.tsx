@@ -26,12 +26,12 @@ export const About = () => {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute -top-10 -right-10 w-60 h-60 bg-indigo-500 rounded-full -z-10 blur-[100px] opacity-10"></div>
-            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-purple-500 rounded-full -z-10 blur-[100px] opacity-10"></div>
+            <div className="absolute -top-10 -right-10 w-60 h-60 bg-brand-100 rounded-full -z-10 blur-[100px] opacity-10"></div>
+            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-brand-400 rounded-full -z-10 blur-[100px] opacity-10"></div>
 
-<div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 md:translate-x-[-25%] md:left-0 bg-[#1c1d4f] backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-2xl border border-white/20 z-20 whitespace-nowrap">              <div className="text-4xl md:text-5xl font-black text-white mb-1 leading-none text-center md:text-start">{t("about.experience")}</div>
+            <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 md:translate-x-[-25%] md:left-0 bg-brand-100 backdrop-blur-md p-6 md:p-8 rounded-3xl shadow-2xl border border-white/20 z-20 whitespace-nowrap">              <div className="text-4xl md:text-5xl font-black text-white mb-1 leading-none text-center md:text-start">{t("about.experience")}</div>
               <div className="font-bold text-white text-base md:text-lg text-center md:text-start">{t("about.years")}</div>
-              <div className="text-[10px] md:text-sm text-indigo-100 text-center md:text-start">{t("about.specialty")}</div>
+              <div className="text-[10px] md:text-sm text-white/80 text-center md:text-start">{t("about.specialty")}</div>
             </div>
           </motion.div>
 
@@ -42,7 +42,7 @@ export const About = () => {
           >
             <h2 className="text-amber-600 font-bold mb-4">{t("about.badge")}</h2>
             <h3 className="text-3xl md:text-4xl font-black mb-8 leading-tight text-slate-900 tracking-tight">
-               {t("about.title")} <br className="hidden sm:block" />
+              {t("about.title")} <br className="hidden sm:block" />
             </h3>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed font-medium">
               {t("about.description1")}
@@ -55,10 +55,10 @@ export const About = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Button
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 variant="solid"
                 size="lg"
-                className="bg-[#1c1d4f] text-white rounded-2xl shadow-lg shadow-indigo-200"
+                className="bg-brand-100 text-white rounded-2xl shadow-lg shadow-brand-100/20"
               >
                 {t("about.contactBtn")}
               </Button>

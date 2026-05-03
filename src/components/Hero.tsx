@@ -18,25 +18,16 @@ export const Hero = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAnch
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center sm:pt-50 pt-40 overflow-hidden bg-slate-50">
       <SubtleGrid color="#00000008" className="opacity-100" />
-      <Spotlight className="-top-40 inset-s-0 md:inset-s-60 md:-top-20" fill="#4f46e520" />
+      <Spotlight className="-top-40 inset-s-0 md:inset-s-60 md:-top-20" fill="var(--color-brand-100)" />
       <SubtleWaves />
 
       {/* Background Elements */}
-      <div className="absolute top-0 inset-e-0 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2 rtl:-translate-x-1/2"></div>
-      <div className="absolute bottom-0 inset-s-0 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2 rtl:translate-x-1/2"></div>
+      <div className="absolute top-0 inset-e-0 w-[600px] h-[600px] bg-brand-100/5 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2 rtl:-translate-x-1/2"></div>
+      <div className="absolute bottom-0 inset-s-0 w-[600px] h-[600px] bg-brand-400/5 rounded-full blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2 rtl:translate-x-1/2"></div>
 
       <ContainerScroll
         titleComponent={
           <div className="flex flex-col items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full text-sm font-bold mb-6 border border-indigo-200 backdrop-blur-sm"
-            >
-              <Star size={16} fill="currentColor" />
-              <span>{t("hero.badge")}</span>
-            </motion.div>
             <h1 className="text-2xl md:text-6xl font-black leading-tight text-slate-900 mb-6 tracking-tighter">
               {t("hero.title1")} <br />
               <span className="gradient-text text-2xl md:text-5xl">{t("hero.title2")}</span>
@@ -68,7 +59,7 @@ export const Hero = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAnch
                   <Button
                     variant="default"
                     size="lg"
-                    className="bg-slate-100 text-[#1c1d4f] border-indigo-100 shadow-sm hover:bg-indigo-50 flex items-center gap-3 rounded-2xl backdrop-blur-sm"
+                    className="bg-slate-100 text-brand-100 border-brand-100/10 shadow-sm hover:bg-brand-100/5 flex items-center gap-3 rounded-2xl backdrop-blur-sm"
                   >
                     <span>{t("hero.callUs")}</span>
                     <Phone size={20} />

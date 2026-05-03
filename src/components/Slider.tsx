@@ -23,7 +23,7 @@ export const Slider = () => {
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-12 space-y-3">
-          <h3 className="text-3xl md:text-4x text-[#021026] font-bold">
+          <h3 className="text-3xl md:text-4x text-brand-100 font-bold">
             {t("slider.title")}
           </h3>
           <p className="text-slate-400 max-w-2xl mx-auto font-medium">
@@ -72,11 +72,11 @@ export const Slider = () => {
             ))}
           </Swiper>
 
-          <button className="swiper-button-prev-custom absolute ltr:-left-4 rtl:-right-4 md:ltr:-left-3 md:rtl:-right-3 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#021026] text-[#021026] rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
+          <button className="swiper-button-prev-custom absolute ltr:-left-4 rtl:-right-4 md:ltr:-left-3 md:rtl:-right-3 top-1/2 -translate-y-1/2 w-12 h-12 bg-brand-100 text-brand-100 rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
             <ChevronLeft className="rtl:rotate-180" size={24} color="white" />
           </button>
 
-          <button className="swiper-button-next-custom absolute ltr:-right-4 rtl:-left-4 md:ltr:-right-3 md:rtl:-left-3 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#021026] text-[#021026] rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
+          <button className="swiper-button-next-custom absolute ltr:-right-4 rtl:-left-4 md:ltr:-right-3 md:rtl:-left-3 top-1/2 -translate-y-1/2 w-12 h-12 bg-brand-100 text-brand-100 rounded-full flex items-center justify-center transition-all z-20 shadow-xl hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-0">
             <ChevronRight className="rtl:rotate-180" size={24} color="white" />
           </button>
 
@@ -88,12 +88,12 @@ export const Slider = () => {
         .custom-pagination .swiper-pagination-bullet {
           width: 6px;
           height: 6px;
-          background: #021026 !important;
+          background: var(--color-brand-100) !important;
           opacity: 1;
           transition: all 0.3s ease;
         }
         .custom-pagination .swiper-pagination-bullet-active {
-          background: #021026 !important;
+          background: var(--color-brand-100) !important;
           width: 24px !important;
           border-radius: 4px;
         }

@@ -3,6 +3,20 @@
 
 @theme {
   --font-sans: var(--font-app);
+
+  --color-brand-100: #1e3174;
+  --color-brand-200: #0e071e;
+  --color-brand-300: #26254e;
+  --color-brand-400: #162261;
+  --color-brand-500: #19153c;
+  --color-brand-600: #242c62;
+  --color-brand-700: #17122f;
+  --color-brand-800: #1b1b4d;
+  --color-brand-900: #2e4183;
+
+  --color-primary: var(--color-brand-100);
+  --color-primary-dark: var(--color-brand-400);
+  --color-accent: var(--color-brand-900);
 }
 
 :root {
@@ -28,18 +42,26 @@ body {
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-linear-to-r from-indigo-600 via-purple-600 to-blue-600;
+  @apply bg-clip-text text-transparent bg-linear-to-r from-brand-100 via-brand-400 to-brand-900;
 }
 
 .gradient-bg {
-  @apply bg-linear-to-r from-indigo-600 via-purple-600 to-blue-600;
+  @apply bg-linear-to-r from-brand-100 via-brand-400 to-brand-900;
 }
 
 /* Custom animations */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes spotlight {
@@ -47,9 +69,10 @@ body {
     opacity: 0;
     transform: translate(-72%, -62%) scale(0.5);
   }
+
   100% {
     opacity: 1;
-    transform: translate(-50%,-40%) scale(1);
+    transform: translate(-50%, -40%) scale(1);
   }
 }
 
@@ -65,6 +88,7 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

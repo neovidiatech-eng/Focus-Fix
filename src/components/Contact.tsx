@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { SubtleGrid } from "./ui/hero-background";
 import { Button } from "./ui/neon-button";
-import {MessageSquare,Phone,Mail,MapPin} from "lucide-react"
+import { MessageSquare, Phone, Mail, MapPin } from "lucide-react"
 import { message } from "antd";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -25,7 +25,7 @@ export const Contact = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const formRef =useRef<HTMLFormElement>(null)
+  const formRef = useRef<HTMLFormElement>(null)
 
 
   const onSubmit = async (data: z.infer<typeof contactSchema>) => {
@@ -61,40 +61,40 @@ export const Contact = () => {
         <div className="bg-slate-50/50 rounded-[3rem] overflow-hidden shadow-xl border border-slate-200">
           <div className="grid lg:grid-cols-2">
             <div className="p-12 lg:p-20">
-              <h2 className="text-indigo-600 font-bold mb-4">{t("contact.badge")}</h2>
+              <h2 className="text-brand-100 font-bold mb-4">{t("contact.badge")}</h2>
               <h3 className="text-2xl font-black mb-10 text-slate-900 tracking-tight">{t("contact.title")}</h3>
 
-            <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-600">{t("contact.form.name")}</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       {...register("user_name")}
-                      className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_name ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 outline-none transition-all placeholder:text-slate-400`} 
-                      placeholder={t("contact.form.namePlaceholder")} 
+                      className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_name ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
+                      placeholder={t("contact.form.namePlaceholder")}
                     />
                     {errors.user_name && <p className="text-red-500 text-xs mt-1">{errors.user_name.message}</p>}
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-600">{t("contact.form.phone")}</label>
-                    <input 
-                      type="tel" 
+                    <input
+                      type="tel"
                       {...register("user_phone")}
-                      className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_phone ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 outline-none transition-all placeholder:text-slate-400`} 
-                      placeholder={t("contact.form.phonePlaceholder")} 
+                      className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_phone ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
+                      placeholder={t("contact.form.phonePlaceholder")}
                     />
                     {errors.user_phone && <p className="text-red-500 text-xs mt-1">{errors.user_phone.message}</p>}
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-600">{t("contact.form.email")}</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     {...register("user_email")}
-                    className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_email ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 outline-none transition-all placeholder:text-slate-400`} 
-                    placeholder={t("contact.form.emailPlaceholder")} 
+                    className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_email ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
+                    placeholder={t("contact.form.emailPlaceholder")}
                   />
                   {errors.user_email && <p className="text-red-500 text-xs mt-1">{errors.user_email.message}</p>}
                 </div>
@@ -103,9 +103,9 @@ export const Contact = () => {
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-600">{t("contact.form.deviceType")}</label>
                     <div className="relative">
-                      <select 
+                      <select
                         {...register("device_type")}
-                        className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.device_type ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 outline-none transition-all appearance-none`}
+                        className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.device_type ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all appearance-none`}
                       >
                         <option value="">{t("contact.form.deviceSelect")}</option>
                         <option value="iPhone 15 Pro Max">iPhone 15 Pro Max</option>
@@ -120,9 +120,9 @@ export const Contact = () => {
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-600">{t("contact.form.issueType")}</label>
                     <div className="relative">
-                      <select 
+                      <select
                         {...register("issue_type")}
-                        className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.issue_type ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 outline-none transition-all appearance-none`}
+                        className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.issue_type ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all appearance-none`}
                       >
                         <option value="">{t("contact.form.issueSelect")}</option>
                         <option value="كسر في الشاشة">{t("contact.form.screen")}</option>
@@ -138,10 +138,10 @@ export const Contact = () => {
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-600">{t("contact.form.details")}</label>
-                  <textarea 
+                  <textarea
                     {...register("message_details")}
-                    rows={4} 
-                    className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.message_details ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/10 outline-none transition-all placeholder:text-slate-400`} 
+                    rows={4}
+                    className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.message_details ? 'border-red-500' : 'border-slate-200'} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
                     placeholder={t("contact.form.detailsPlaceholder")}
                   ></textarea>
                   {errors.message_details && <p className="text-red-500 text-xs mt-1">{errors.message_details.message}</p>}
@@ -152,10 +152,10 @@ export const Contact = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Button
-    
+
                     variant="solid"
                     size="lg"
-                    className="w-full bg-[#1c1d4f] text-white hover:bg-indigo-700 rounded-2xl shadow-lg shadow-indigo-100"
+                    className="w-full bg-brand-100 text-white hover:bg-brand-400 rounded-2xl shadow-lg shadow-brand-100/20"
                   >
                     {t("contact.form.submit")}
                   </Button>
@@ -163,7 +163,7 @@ export const Contact = () => {
               </form>
             </div>
 
-            <div className="bg-[#1c1d4f] p-12 lg:p-20 text-white flex flex-col justify-center">
+            <div className="bg-brand-100 p-12 lg:p-20 text-white flex flex-col justify-center">
               <h4 className="text-2xl font-bold mb-10">{t("contact.info.title")}</h4>
 
               <div className="space-y-10">
@@ -173,7 +173,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-bold mb-1">{t("contact.info.whatsapp")}</div>
-                    <a href="https://wa.me/201009911934" className="text-indigo-100 hover:text-white transition-colors">01009911934</a>
+                    <a href="https://wa.me/201009911934" className="text-white/80 hover:text-white transition-colors">01009911934</a>
                   </div>
                 </div>
 
@@ -183,7 +183,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-bold mb-1">{t("contact.info.phone")}</div>
-                    <a href="tel:01009911934" className="text-indigo-100 hover:text-white transition-colors">01009911934</a>
+                    <a href="tel:01009911934" className="text-white/80 hover:text-white transition-colors">01009911934</a>
                   </div>
                 </div>
 
@@ -193,7 +193,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-bold mb-1">{t("contact.info.email")}</div>
-                    <a href="mailto:Info@focus-fastestrepair.com" className="text-indigo-100 hover:text-white transition-colors">info@focus-fastestrepair.com</a>
+                    <a href="mailto:Info@focus-fastestrepair.com" className="text-white/80 hover:text-white transition-colors">info@focus-fastestrepair.com</a>
                   </div>
                 </div>
 
@@ -203,7 +203,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-bold mb-1">{t("contact.info.location")}</div>
-                    <p className="text-indigo-100">{t("contact.info.address")}</p>
+                    <p className="text-white/80">{t("contact.info.address")}</p>
                   </div>
                 </div>
               </div>

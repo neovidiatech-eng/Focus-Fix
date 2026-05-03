@@ -20,36 +20,36 @@ export const Services = () => {
     {
       title: t("services.screen.title"),
       desc: t("services.screen.desc"),
-      icon: <Smartphone className="text-[#1c1d4f]" size={32} />,
-      color: "bg-indigo-50",
+      icon: <Smartphone className="text-brand-100" size={32} />,
+      color: "bg-brand-100/10",
       className: "md:col-span-2 md:row-span-1"
     },
     {
       title: t("services.battery.title"),
       desc: t("services.battery.desc"),
-      icon: <Battery className="text-[#1c1d4f]" size={32} />,
-      color: "bg-indigo-50",
+      icon: <Battery className="text-brand-100" size={32} />,
+      color: "bg-brand-100/10",
       className: "md:col-span-1 md:row-span-1"
     },
     {
       title: t("services.back.title"),
       desc: t("services.back.desc"),
-      icon: <ShieldCheck className="text-[#1c1d4f]" size={32} />,
-      color: "bg-indigo-50",
+      icon: <ShieldCheck className="text-brand-100" size={32} />,
+      color: "bg-brand-100/10",
       className: "md:col-span-1 md:row-span-1"
     },
     {
       title: t("services.camera.title"),
       desc: t("services.camera.desc"),
-      icon: <Camera className="text-[#1c1d4f]" size={32} />,
-      color: "bg-indigo-50",
+      icon: <Camera className="text-brand-100" size={32} />,
+      color: "bg-brand-100/10",
       className: "md:col-span-1 md:row-span-1"
     },
     {
       title: t("services.motherboard.title"),
       desc: t("services.motherboard.desc"),
-      icon: <Cpu className="text-[#1c1d4f]" size={32} />,
-      color: "bg-indigo-50",
+      icon: <Cpu className="text-brand-100" size={32} />,
+      color: "bg-brand-100/10",
       className: "md:col-span-1 md:row-span-1"
     }
   ];
@@ -59,7 +59,7 @@ export const Services = () => {
       <SubtleGrid color="#00000008" className="opacity-100" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-indigo-600 font-bold mb-4">{t("services.badge")}</h2>
+          <h2 className="text-brand-100 font-bold mb-4">{t("services.badge")}</h2>
           <h3 className="text-2xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight">{t("services.title")}</h3>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg font-medium">{t("services.description")}</p>
         </div>
@@ -73,7 +73,7 @@ export const Services = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className={`p-8 rounded-[2.5rem] border border-slate-200 shadow-sm hover:border-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/5 transition-all bg-slate-100 group text-start ${service.className}`}
+              className={`p-8 rounded-[2.5rem] border border-slate-200 shadow-sm hover:border-brand-100/30 hover:shadow-xl hover:shadow-brand-100/5 transition-all bg-slate-100 group text-start ${service.className}`}
             >
               <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                 {service.icon}
@@ -84,7 +84,7 @@ export const Services = () => {
                 <a href="https://wa.me/201009911934">
                   <Button
                     variant="ghost"
-                    className="text-indigo-600 font-bold flex items-center gap-2 group-hover:gap-4 transition-all p-0 border-none hover:bg-transparent"
+                    className="text-brand-100 font-bold flex items-center gap-2 group-hover:gap-4 transition-all p-0 border-none hover:bg-transparent"
                   >
                     <span>{t("services.orderNow")}</span>
                     <ChevronLeft size={18} className="rtl:rotate-0 rotate-180" />

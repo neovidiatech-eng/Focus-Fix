@@ -14,7 +14,7 @@ export const Footer = ({ onScrollTo }: { onScrollTo: (e: React.MouseEvent<HTMLAn
         <p className="text-slate-600 text-sm">{t("footer.rights")}</p>
 
         <div className="text-sm font-bold text-slate-600">
-          {t("footer.developedBy")} <span className="text-indigo-600">neovidia</span>
+          {t("footer.developedBy")} <span className="text-brand-100">neovidia</span>
         </div>
       </div>
     </footer>
