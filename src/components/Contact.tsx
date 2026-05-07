@@ -38,7 +38,7 @@ export const Contact = () => {
       formData.append('issue', data.issue_type);
       formData.append('message', data.message_details || '');
 
-      const response = await fetch('send_mail.php', {
+      const response = await fetch('/send_mail.php', {
         method: 'POST',
         body: formData,
       });

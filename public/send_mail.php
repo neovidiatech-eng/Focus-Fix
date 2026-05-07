@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // إعداد البريد
     $to = "Info@focus-fastestrepair.com";
     $subject = "طلب صيانة جديد من الموقع - Focus Fix";
-    
     // محتوى الرسالة
     $email_content = "طلب صيانة جديد تم إرساله من الموقع:\n\n";
     $email_content .= "الاسم: $name\n";
