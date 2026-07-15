@@ -154,5 +154,10 @@
   "footer": {
     "rights": "جميع الحقوق محفوظة © 2026 FOCUS - Fastest Mobile Repair",
     "developedBy": "تم التصميم والتطوير بواسطة"
+  },
+  "thankYou": {
+    "title": "شكرًا لك!",
+    "message": "تم إرسال طلبك بنجاح. سنتواصل معك في أقرب وقت.",
+    "backHome": "العودة للرئيسية"
   }
 }

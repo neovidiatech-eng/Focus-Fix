@@ -9,8 +9,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { useNavigate } from "react-router-dom";
 export const Contact = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const contactSchema = z.object({
     user_name: z.string().min(3, t("contact.messages.nameError")),
@@ -31,7 +33,6 @@ export const Contact = () => {
   } = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
   });
-
   const formRef = useRef<HTMLFormElement>(null);
   const onSubmit = async (data: z.infer<typeof contactSchema>) => {
     try {
@@ -49,7 +50,7 @@ export const Contact = () => {
         "8c8HlsGEFnZP4KKf4",
       );
 
-      message.success(t("contact.messages.success"));
+      navigate("/thank-you");
       reset();
     } catch (error) {
       console.log(error);
@@ -78,156 +79,156 @@ export const Contact = () => {
                 onSubmit={handleSubmit(onSubmit)}
                 className="space-y-6"
               >
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-600">
-                      {t("contact.form.name")}
-                    </label>
-                    <input
-                      type="text"
-                      {...register("user_name")}
-                      className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_name ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
-                      placeholder={t("contact.form.namePlaceholder")}
-                    />
-                    {errors.user_name && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors.user_name.message}
-                      </p>
-                    )}
-                  </div>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-600">
+                          {t("contact.form.name")}
+                        </label>
+                        <input
+                          type="text"
+                          {...register("user_name")}
+                          className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_name ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
+                          placeholder={t("contact.form.namePlaceholder")}
+                        />
+                        {errors.user_name && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.user_name.message}
+                          </p>
+                        )}
+                      </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-600">
-                      {t("contact.form.phone")}
-                    </label>
-                    <input
-                      type="tel"
-                      {...register("user_phone")}
-                      className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_phone ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
-                      placeholder={t("contact.form.phonePlaceholder")}
-                    />
-                    {errors.user_phone && (
-                      <p className="text-red-500 text-xs mt-1">
-                        {errors.user_phone.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-600">
-                    {t("contact.form.email")}
-                  </label>
-                  <input
-                    type="email"
-                    {...register("user_email")}
-                    className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_email ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
-                    placeholder={t("contact.form.emailPlaceholder")}
-                  />
-                  {errors.user_email && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.user_email.message}
-                    </p>
-                  )}
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-600">
-                      {t("contact.form.deviceType")}
-                    </label>
-                    <div className="relative">
-                      <select
-                        {...register("device_type")}
-                        className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.device_type ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all appearance-none`}
-                      >
-                        <option value="">
-                          {t("contact.form.deviceSelect")}
-                        </option>
-                        <option value="iPhone 15 Pro Max">
-                          iPhone 15 Pro Max
-                        </option>
-                        <option value="iPhone 14 Pro Max">
-                          iPhone 14 Pro Max
-                        </option>
-                        <option value="iPhone 13 Pro Max">
-                          iPhone 13 Pro Max
-                        </option>
-                        <option value="iPhone 12 Pro Max">
-                          iPhone 12 Pro Max
-                        </option>
-                        <option value="أخرى">{t("contact.form.other")}</option>
-                      </select>
-                      {errors.device_type && (
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-600">
+                          {t("contact.form.phone")}
+                        </label>
+                        <input
+                          type="tel"
+                          {...register("user_phone")}
+                          className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_phone ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
+                          placeholder={t("contact.form.phonePlaceholder")}
+                        />
+                        {errors.user_phone && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.user_phone.message}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-600">
+                        {t("contact.form.email")}
+                      </label>
+                      <input
+                        type="email"
+                        {...register("user_email")}
+                        className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.user_email ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
+                        placeholder={t("contact.form.emailPlaceholder")}
+                      />
+                      {errors.user_email && (
                         <p className="text-red-500 text-xs mt-1">
-                          {errors.device_type.message}
+                          {errors.user_email.message}
                         </p>
                       )}
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-600">
-                      {t("contact.form.issueType")}
-                    </label>
-                    <div className="relative">
-                      <select
-                        {...register("issue_type")}
-                        className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.issue_type ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all appearance-none`}
-                      >
-                        <option value="">
-                          {t("contact.form.issueSelect")}
-                        </option>
-                        <option value="كسر في الشاشة">
-                          {t("contact.form.screen")}
-                        </option>
-                        <option value="مشكلة في البطارية">
-                          {t("contact.form.battery")}
-                        </option>
-                        <option value="كسر في الظهر">
-                          {t("contact.form.back")}
-                        </option>
-                        <option value="مشكلة في الكاميرا">
-                          {t("contact.form.camera")}
-                        </option>
-                        <option value="أخرى">{t("contact.form.other")}</option>
-                      </select>
-                      {errors.issue_type && (
+
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-600">
+                          {t("contact.form.deviceType")}
+                        </label>
+                        <div className="relative">
+                          <select
+                            {...register("device_type")}
+                            className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.device_type ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all appearance-none`}
+                          >
+                            <option value="">
+                              {t("contact.form.deviceSelect")}
+                            </option>
+                            <option value="iPhone 15 Pro Max">
+                              iPhone 15 Pro Max
+                            </option>
+                            <option value="iPhone 14 Pro Max">
+                              iPhone 14 Pro Max
+                            </option>
+                            <option value="iPhone 13 Pro Max">
+                              iPhone 13 Pro Max
+                            </option>
+                            <option value="iPhone 12 Pro Max">
+                              iPhone 12 Pro Max
+                            </option>
+                            <option value="أخرى">{t("contact.form.other")}</option>
+                          </select>
+                          {errors.device_type && (
+                            <p className="text-red-500 text-xs mt-1">
+                              {errors.device_type.message}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-600">
+                          {t("contact.form.issueType")}
+                        </label>
+                        <div className="relative">
+                          <select
+                            {...register("issue_type")}
+                            className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.issue_type ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all appearance-none`}
+                          >
+                            <option value="">
+                              {t("contact.form.issueSelect")}
+                            </option>
+                            <option value="كسر في الشاشة">
+                              {t("contact.form.screen")}
+                            </option>
+                            <option value="مشكلة في البطارية">
+                              {t("contact.form.battery")}
+                            </option>
+                            <option value="كسر في الظهر">
+                              {t("contact.form.back")}
+                            </option>
+                            <option value="مشكلة في الكاميرا">
+                              {t("contact.form.camera")}
+                            </option>
+                            <option value="أخرى">{t("contact.form.other")}</option>
+                          </select>
+                          {errors.issue_type && (
+                            <p className="text-red-500 text-xs mt-1">
+                              {errors.issue_type.message}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-600">
+                        {t("contact.form.details")}
+                      </label>
+                      <textarea
+                        {...register("message_details")}
+                        rows={4}
+                        className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.message_details ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
+                        placeholder={t("contact.form.detailsPlaceholder")}
+                      ></textarea>
+                      {errors.message_details && (
                         <p className="text-red-500 text-xs mt-1">
-                          {errors.issue_type.message}
+                          {errors.message_details.message}
                         </p>
                       )}
                     </div>
-                  </div>
-                </div>
 
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-600">
-                    {t("contact.form.details")}
-                  </label>
-                  <textarea
-                    {...register("message_details")}
-                    rows={4}
-                    className={`w-full px-6 py-4 rounded-2xl bg-slate-50 border ${errors.message_details ? "border-red-500" : "border-slate-200"} text-slate-900 focus:border-brand-100 focus:ring-2 focus:ring-brand-100/10 outline-none transition-all placeholder:text-slate-400`}
-                    placeholder={t("contact.form.detailsPlaceholder")}
-                  ></textarea>
-                  {errors.message_details && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.message_details.message}
-                    </p>
-                  )}
-                </div>
-
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Button
-                    variant="solid"
-                    size="lg"
-                    className="w-full bg-brand-100 text-white hover:bg-brand-400 rounded-2xl shadow-lg shadow-brand-100/20"
-                  >
-                    {t("contact.form.submit")}
-                  </Button>
-                </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Button
+                        variant="solid"
+                        size="lg"
+                        className="w-full bg-brand-100 text-white hover:bg-brand-400 rounded-2xl shadow-lg shadow-brand-100/20"
+                      >
+                        {t("contact.form.submit")}
+                      </Button>
+                    </motion.div>
               </form>
             </div>
 

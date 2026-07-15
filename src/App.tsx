@@ -1,4 +1,5 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/NavBar";
 import { Services } from "./components/Services";
 import { Hero } from "./components/Hero";
@@ -10,8 +11,9 @@ import { Slider } from "./components/Slider";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
+import { ThankYouPage } from "./components/ThankYouPage";
 
-export default function App() {
+const MainPage = () => {
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string, callback?: () => void) => {
     e.preventDefault();
 
@@ -51,5 +53,14 @@ export default function App() {
       <Footer onScrollTo={handleScrollTo} />
       <FloatingWhatsApp />
     </div>
+  );
+};
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/thank-you" element={<ThankYouPage />} />
+    </Routes>
   );
 }
