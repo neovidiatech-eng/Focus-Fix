@@ -73,23 +73,22 @@ export const Services = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className={`p-8 rounded-[2.5rem] border border-slate-200 shadow-sm hover:border-brand-100/30 hover:shadow-xl hover:shadow-brand-100/5 transition-all bg-slate-100 group text-start ${service.className}`}
+              className={`p-8 rounded-[2.5rem] border border-slate-200 shadow-sm hover:border-brand-100/30 hover:shadow-xl hover:shadow-brand-100/5 transition-all bg-slate-100 group text-start flex flex-col h-full ${service.className}`}
             >
               <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                 {service.icon}
               </div>
               <h4 className="text-2xl font-bold mb-4 text-slate-900">{service.title}</h4>
               <p className="text-slate-600 mb-6 leading-relaxed font-medium">{service.desc}</p>
-              <div className="flex justify-start">
-                <a href="https://wa.me/201009911934">
-                  <Button
-                    variant="ghost"
-                    className="text-brand-100 font-bold flex items-center gap-2 group-hover:gap-4 transition-all p-0 border-none hover:bg-transparent"
-                  >
-                    <span>{t("services.orderNow")}</span>
-                    <ChevronLeft size={18} className="rtl:rotate-0 rotate-180" />
-                  </Button>
-                </a>
+              <div className="flex justify-start mt-auto">
+                <Button
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  variant="solid"
+                  className="mx-0 bg-brand-100 text-white hover:bg-brand-400 font-bold flex items-center gap-2 group-hover:gap-4 transition-all px-6 py-2 rounded-xl cursor-pointer"
+                >
+                  <span>{t("services.orderNow")}</span>
+                  <ChevronLeft size={18} className="rtl:rotate-0 rotate-180" />
+                </Button>
               </div>
             </motion.div>
           ))}

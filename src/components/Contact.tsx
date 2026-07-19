@@ -224,7 +224,7 @@ export const Contact = () => {
                       <Button
                         variant="solid"
                         size="lg"
-                        className="w-full bg-brand-100 text-white hover:bg-brand-400 rounded-2xl shadow-lg shadow-brand-100/20"
+                        className="w-full bg-brand-100 text-white hover:bg-brand-400 rounded-2xl shadow-lg shadow-brand-100/20 cursor-pointer"
                       >
                         {t("contact.form.submit")}
                       </Button>
