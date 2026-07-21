@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "focus-fix.vercel.app"
+        }
+      ],
+      "destination": "https://focusfix.net/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.focusfix.net"
+        }
+      ],
+      "destination": "https://focusfix.net/:path*",
+      "permanent": true
+    }
+  ]
+}
