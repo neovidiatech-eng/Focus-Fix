@@ -77,7 +77,7 @@ export const Hero = ({
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <a href="#contact" onClick={(e) => onScrollTo(e, "#contact")}>
+                <a href="tel:+201009911934">
                   <Button
                     variant="default"
                     size="lg"
