@@ -37,7 +37,7 @@ export const Contact = () => {
   const onSubmit = async (data: z.infer<typeof contactSchema>) => {
     try {
       await emailjs.send(
-        "service_oh0x7i8", // Service ID
+        "service_jt5mzvb", // Service ID
         "template_i2lx67g", // Template ID
         {
           user_name: data.user_name,
